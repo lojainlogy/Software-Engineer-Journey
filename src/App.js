@@ -593,7 +593,7 @@ export default function App() {
       </div>
 
       {/* Content */}
-      <div style={{ position: "relative", zIndex: 5, maxWidth: 480, margin: "0 auto", padding: "20px 16px 100px", overflowY: "auto", maxHeight: "calc(100vh - 130px)" }}>
+      <div style={{ position: "relative", zIndex: 5, maxWidth: 600, width: "100%", margin: "0 auto", padding: "20px 16px 100px", overflowY: "auto", maxHeight: "calc(100vh - 130px)", boxSizing: "border-box" }}>
 
         {/* MAP — with moving avatar */}
         {screen === "map" && (
@@ -781,7 +781,7 @@ export default function App() {
       </div>
 
       {/* Bottom Nav */}
-      <div style={{ position: "fixed", bottom: 0, left: "50%", transform: "translateX(-50%)", width: "100%", maxWidth: 480, zIndex: 20, background: "rgba(10,0,21,0.92)", backdropFilter: "blur(20px)", borderTop: "1px solid rgba(255,255,255,0.08)", display: "flex", justifyContent: "space-around", padding: "12px 0 18px" }}>
+      <div style={{ position: "fixed", bottom: 0, left: "50%", transform: "translateX(-50%)", width: "100%", maxWidth: 600, zIndex: 20, background: "rgba(10,0,21,0.92)", backdropFilter: "blur(20px)", borderTop: "1px solid rgba(255,255,255,0.08)", display: "flex", justifyContent: "space-around", padding: "12px 0 18px" }}>
         {[{ id: "map", icon: "🗺️", label: "Map" }, { id: "quests", icon: "⚔️", label: "Quests" }, { id: "profile", icon: "👩‍💻", label: "Profile" }].map(nav => (
           <button key={nav.id} className="nav-btn" onClick={() => setScreen(nav.id)} style={{ background: "none", border: "none", cursor: "pointer", display: "flex", flexDirection: "column", alignItems: "center", gap: 4, opacity: screen === nav.id ? 1 : 0.4, transition: "all 0.2s", color: screen === nav.id ? "#fbbf24" : "white" }}>
             <span style={{ fontSize: 24 }}>{nav.icon}</span>
